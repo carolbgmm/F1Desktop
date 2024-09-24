@@ -1,0 +1,15 @@
+Menú de navegación:
+<nav>
+    <a href="index.html" title="inicio"> Inicio </a>
+    ...
+</nav>
+NO USAR UNA LISTA CON UN DIV. Eso se hacía en el estándar 4.
+div es un elemento anónimo que hace que todo lo que está dentro se considere como un todo.
+
+buscar piloto en formula1.com
+
+Piloto: Nico Hulkenberg 
+Equipo: Haas F1 Team
+
+Al final del proyecto, no puede pesar más de 90MB (la que permite el campus).
+NO UTILIZAR <embed> <iframe> o <Object>
