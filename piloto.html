@@ -10,21 +10,24 @@
     <meta name ="viewport" content ="width=device-width, initial-scale=1.0" />
     <meta name="author" content="Carolina Barrios Gonzalez"/>
     <link rel="stylesheet" type="text/css" href="estilo/estilo.css" />
+    <link rel="icon" type="ico" href="multimedia/imagenes/favicon.ico"/>
 </head>
 
 <body>
     <!-- Datos con el contenidos que aparece en el navegador -->
+    <header>
     <h1>F1 Desktop</h1>
-    <nav>
-        <a href="index.html" title="inicio">Inicio</a>
-        <a href="piloto.html" title="piloto">Piloto</a>
-        <a href="noticias.html" title="noticias">Noticias</a>
-        <a href="calendario.html" title="calendario">Calendario</a>
-        <a href="meteorologia.html" title="meteorologia">Meteorologia</a>
-        <a href="circuito.html" title="circuito">Cirtuito</a>
-        <a href="viajes.html" title="viajes">Viajes</a>
-        <a href="juegos.html" title="juegos">Juegos</a>
-    </nav>
+        <nav>
+            <a href="index.html" title="inicio">Inicio</a>
+            <a href="piloto.html" title="piloto">Piloto</a>
+            <a href="noticias.html" title="noticias">Noticias</a>
+            <a href="calendario.html" title="calendario">Calendario</a>
+            <a href="meteorologia.html" title="meteorologia">Meteorologia</a>
+            <a href="circuito.html" title="circuito">Cirtuito</a>
+            <a href="viajes.html" title="viajes">Viajes</a>
+            <a href="juegos.html" title="juegos">Juegos</a>
+        </nav>
+    </header>
     <h2>Piloto</h2>
     <h3>Datos personales</h3>
     <p>Nombre: Nicolas.</p>
@@ -32,6 +35,13 @@
     <p>Equipo: Haas</p>
     <p>Nacimiento: 19/08/1983 en Emmerich am Rhein, Alemania.</p>
     <p>Residencia: Emmerich am Rhein, Alemania.</p>
+    <picture>
+        <source srcset="multimedia/imagenes/nico_h_movil.png" media="(max-width:465px)">
+        <source srcset="multimedia/imagenes/nico_h_tablet.png" media="(max-width:799px)">
+        <source srcset="multimedia/imagenes/nico_h_monitor.png" media="(min-width:800px)">
+        <img src="multimedia/imagenes/nico_h_monitor.png" alt="Imagen de Nico Hulkenberg"/>
+    </picture>
+    
     <h3>Presentación</h3>
     <p>Nico Hülkenberg, es un piloto alemán de automovilismo. Ha competido en más de 10 temporadas de Fórmula 1 para los equipos Williams, Force India, Renault y Haas, entre otros.</p>
     <p>Es el primer piloto confirmado por Audi para su ingreso a la Fórmula 1, en 2026. </p>
@@ -90,17 +100,17 @@
     <table id="resultados">
         <thead>
             <tr>
-                <th id="carrera">Carrera</th>
-                <th id="puntos">Puntos</th>
-                <th id="posicion">Posición</th>
-                <th id="pole">Pole</th>
-                <th id="victoria">Victoria</th>
-                <th id="podio">Podio</th>
+                <th id="carrera" scope="col">Carrera</th>
+                <th id="puntos" scope="col">Puntos</th>
+                <th id="posicion" scope="col">Posición</th>
+                <th id="pole" scope="col">Pole</th>
+                <th id="victoria" scope="col">Victoria</th>
+                <th id="podio" scope="col">Podio</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <th id="barein" headers="carrera">Baréin</th>
+                <th id="barein" headers="carrera" scope="row">Baréin</th>
                 <td headers="puntos barein">0</td>
                 <td headers="posicion barein">16</td>
                 <td headers="pole barein">No</td>
@@ -108,7 +118,7 @@
                 <td headers="podio barein">No</td>
             </tr>
             <tr>
-                <th id="arabia" headers="carrera">Arabia Saudí</th>
+                <th id="arabia" headers="carrera" scope="row">Arabia Saudí</th>
                 <td headers="puntos arabia">1</td>
                 <td headers="posicion arabia">10</td>
                 <td headers="pole arabia">No</td>
@@ -116,7 +126,7 @@
                 <td headers="podio arabia">No</td>
             </tr>
             <tr>
-                <th id="australia" headers="carrera">Australia</th>
+                <th id="australia" headers="carrera" scope="row">Australia</th>
                 <td headers="puntos australia">2</td>
                 <td headers="posicion australia">9</td>
                 <td headers="pole australia">No</td>
@@ -124,7 +134,7 @@
                 <td headers="podio australia">No</td>
             </tr>
             <tr>
-                <th id="japon" headers="carrera">Japón</th>
+                <th id="japon" headers="carrera" scope="row">Japón</th>
                 <td headers="puntos japon">0</td>
                 <td headers="posicion japon">11</td>
                 <td headers="pole japon">No</td>
@@ -132,7 +142,7 @@
                 <td headers="podio japon">No</td>
             </tr>
             <tr>
-                <th id="china" headers="carrera">China</th>
+                <th id="china" headers="carrera" scope="row">China</th>
                 <td headers="puntos china">1</td>
                 <td headers="posicion china">10</td>
                 <td headers="pole china">No</td>
@@ -140,7 +150,7 @@
                 <td headers="podio china">No</td>
             </tr>
             <tr>
-                <th id="miami" headers="carrera">Miami</th>
+                <th id="miami" headers="carrera" scope="row">Miami</th>
                 <td headers="puntos miami">2</td>
                 <td headers="posicion miami">11</td>
                 <td headers="pole miami">No</td>
@@ -148,7 +158,7 @@
                 <td headers="podio miami">No</td>
             </tr>
             <tr>
-                <th id="romagna" headers="carrera">Emilia-Romagna</th>
+                <th id="romagna" headers="carrera" scope="row">Emilia-Romagna</th>
                 <td headers="puntos romagna">0</td>
                 <td headers="posicion romagna">11</td>
                 <td headers="pole romagna">No</td>
@@ -156,7 +166,7 @@
                 <td headers="podio romagna">No</td>
             </tr>
             <tr>
-                <th id="monaco" headers="carrera">Monaco</th>
+                <th id="monaco" headers="carrera" scope="row">Monaco</th>
                 <td headers="puntos monaco">0</td>
                 <td headers="posicion monaco">DNF</td>
                 <td headers="pole monaco">No</td>
@@ -164,7 +174,7 @@
                 <td headers="podio monaco">No</td>
             </tr>
             <tr>
-                <th id="canada" headers="carrera">Canadá</th>
+                <th id="canada" headers="carrera" scope="row">Canadá</th>
                 <td headers="puntos canada">0</td>
                 <td headers="posicion canada">11</td>
                 <td headers="pole canada">No</td>
@@ -177,8 +187,8 @@
     <p><a href="https://www.formula1.com/en/drivers/nico-hulkenberg">Enlace a su página en F1</a></p>
     <p><a href="https://en.wikipedia.org/wiki/Nico_H%C3%BClkenberg">Enlace a su página en Wikipedia</a></p>
     <h3>Recursos</h3>
-    <img src="multimedia/imagenes/nico_h.png" alt="Imagen de Nico Hulkenberg"/>
-    <video src="multimedia/videos/Huuuuulkenberg.mp4" controls></video>
-    <audio src="multimedia/audios/Huuuuulkenberg.mp3" controls></audio>
+    <p><img src="multimedia/imagenes/nico_h.png" alt="Imagen de Nico Hulkenberg"/></p>
+    <p><video src="multimedia/videos/Huuuuulkenberg.mp4" controls></video></p>
+    <p><audio src="multimedia/audios/Huuuuulkenberg.mp3" controls></audio></p>
 </body>
 </html>
