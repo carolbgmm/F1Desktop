@@ -1,5 +1,27 @@
 /*Carolina Barrios González uo275673*/
-body { font-family: Goudy Old Style, Garamond, Big Caslon, Times New Roman, serif ;}
+body { 
+    /*Especifidad 001*/
+    font-family: "Goudy Old Style", Garamond, "Big Caslon", "Times New Roman", serif ;
+    background-color: #cfc7b0;
+    color: #0C2900;
+}
 
+header {
+    /*Especifidad 001*/
+    background-color: #2B5400;
+}
 
+h1{
+    /*Especifidad 001*/
+    color: #CFC7B0;
+}
 
+nav {
+    /*Especifidad 001*/
+    color:#CFC7B0;
+}
+
+a {
+    /*Especifidad 001*/
+    color: #CFC7B0;
+}
