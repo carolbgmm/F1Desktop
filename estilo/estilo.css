@@ -55,14 +55,17 @@ p a {
 }
 
 dt {
+    /*Especifidad 001*/
     font-weight: bold;
 }
 
 th {
+    /*Especifidad 001*/
     border-style: outset;
 }
 
 td {
+    /*Especifidad 001*/
     border-style: inset;
 }
 
@@ -72,6 +75,7 @@ p[text^="Estás en:"] {
 }
 
 video {
+    /*Especifidad 001*/
     width: 100%;
     height: auto;
 }
