@@ -1,35 +1,80 @@
 /*Carolina Barrios González uo275673*/
+/*
+    Contrastes: 
+        #0C2900 con #D4CFB9
+        #224200 con #D4CFB9
+        #B0B54A con #0C2900
+        
+*/
 body { 
     /*Especifidad 001*/
     font-family: "Goudy Old Style", Garamond, "Big Caslon", "Times New Roman", serif ;
-    background-color: #cfc7b0;
+    background-color: #D4CFB9;
     color: #0C2900;
 }
 
 header {
     /*Especifidad 001*/
-    background-color: #2B5400;
+    background-color: #0C2900;
+    color: #B0B54A;
 }
 
-h1{
+h1 a{
+    /*Especifidad 002*/
+    text-decoration-line: none;
+    background-color: #0C2900;
+    color: #B0B54A;
+}
+
+nav a{
+    /*Especifidad 002*/
+    text-decoration-line: none;
+    background-color: #0C2900;
+    color: #B0B54A;
+}
+
+ul { 
     /*Especifidad 001*/
-    color: #CFC7B0;
+    list-style-type: square; 
 }
 
-nav {
+ol {
     /*Especifidad 001*/
-    color:#CFC7B0;
+    list-style-type: upper-roman; 
 }
 
-a {
-    /*Especifidad 001*/
-    color: #CFC7B0;
+ul ol {
+    /*Especifidad 002*/
+    list-style-type: lower-alpha; 
 }
 
-/*
-    Paleta: 
-        #cfc7b0 
-        #969B40 
-        #2B5400
-        #0C2900
-*/
+p a {
+    /*Especifidad 002*/
+    background-color: #D4CFB9;
+    color: #0C2900;
+}
+
+dt {
+    font-weight: bold;
+}
+
+th {
+    border-style: outset;
+}
+
+td {
+    border-style: inset;
+}
+
+p[text^="Estás en:"] {
+    /*Especifidad 011*/
+    font-size: x-small;
+}
+
+video {
+    width: 100%;
+    height: auto;
+}
+
+
+
