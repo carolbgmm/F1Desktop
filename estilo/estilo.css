@@ -19,17 +19,17 @@ header {
     color: #B0B54A;
 }
 
-h1 a{
-    /*Especifidad 002*/
+header h1 a{
+    /*Especifidad 003*/
     text-decoration-line: none;
-    background-color: #0C2900;
+    /*El background color se hereda de header*/
     color: #B0B54A;
 }
 
-nav a{
-    /*Especifidad 002*/
+header nav a{
+    /*Especifidad 003*/
     text-decoration-line: none;
-    background-color: #0C2900;
+    /*El background color se hereda de header*/
     color: #B0B54A;
 }
 
@@ -50,7 +50,7 @@ ul ol {
 
 p a {
     /*Especifidad 002*/
-    background-color: #D4CFB9;
+    /*Background color se hereda del body*/
     color: #0C2900;
 }
 
