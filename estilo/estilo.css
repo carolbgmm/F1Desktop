@@ -80,5 +80,10 @@ video {
     height: auto;
 }
 
+audio {
+    max-width: 100%;
+}
+
+
 
 
