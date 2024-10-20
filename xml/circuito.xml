@@ -15,12 +15,12 @@
         <referencia>"https://veloviewer.com/segment/4064048/Circuit+de+Catalunya+-+F1+Circuit+Full+Lap"</referencia>
     </referencias>
     <fotos>
-        <foto>"./multimedia/imagenes/Circuit_de_Catalunya.svg"</foto>
-        <foto>"./multimedia/imagenes/FotoAerea_2021.jpg"</foto>
-        <foto>"./multimedia/imagenes/mapa-barcenola-2024.webp"</foto>
+        <foto>"Circuit_de_Catalunya.svg"</foto>
+        <foto>"FotoAerea_2021.jpg"</foto>
+        <foto>"mapa-barcenola-2024.webp"</foto>
     </fotos>
     <videos>
-        <video>"./multimedia/video/barcenola_2016.mp4"</video>
+        <video>"barcenola_2016.mp4"</video>
     </videos>
     <coord latitud="41.570582" longitud="2.259647" altitud="125">
     <tramos>
