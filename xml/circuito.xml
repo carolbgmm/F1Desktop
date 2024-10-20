@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8">
+<!DOCTYPE circuito SYSTEM "circuito.dtd">
+<circuito>
+    <nombre>"Barcelona-Catalunya"</nombre>
+    <longitud unidad="m" valor="4655"></longitud>
+    <anchura unidad="m" valor="12"></anchura>
+    <fecha>"23/06/2024"</fecha>
+    <hora>"13:00"</hora>
+    <vueltas>"66"</vueltas>
+    <localidad>"Barcelona"</localidad>
+    <pais>"España"</pais>
+    <referencias>
+        <referencia>"https://www.formula1.com/en/information/spain-circuit-de-barcelona-catalunya-barcelona.6F5mWJGRuYkQ1XPX48pl8"</referencia>
+        <referencia>"https://soymotero.net/competicion/el-circuito-de-cataluna-al-detalle/"</referencia>
+        <referencia>"https://veloviewer.com/segment/4064048/Circuit+de+Catalunya+-+F1+Circuit+Full+Lap"</referencia>
+    </referencias>
+    <fotos>
+        <foto>"./multimedia/imagenes/Circuit_de_Catalunya.svg"</foto>
+        <foto>"./multimedia/imagenes/FotoAerea_2021.jpg"</foto>
+        <foto>"./multimedia/imagenes/mapa-barcenola-2024.webp"</foto>
+    </fotos>
+    <videos>
+        <video>"./multimedia/video/barcenola_2016.mp4"</video>
+    </videos>
+    <coord latitud="41.570582" longitud="2.259647" altitud="125">
+    <tramos>
+        <tramo></tramo>
+    </tramos>
+</circuito>
