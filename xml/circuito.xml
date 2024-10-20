@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8">
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE circuito SYSTEM "circuito.dtd">
 <circuito>
     <nombre>"Barcelona-Catalunya"</nombre>
@@ -22,7 +22,7 @@
     <videos>
         <video>"barcenola_2016.mp4"</video>
     </videos>
-    <coord latitud="41.570582" longitud="2.259647" altitud="125">
+    <coord latitud="41.570582" longitud="2.259647" altitud="125"></coord>
     <tramos>
         <tramo></tramo>
     </tramos>
