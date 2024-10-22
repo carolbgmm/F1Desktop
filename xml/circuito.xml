@@ -22,8 +22,17 @@
     <videos>
         <video>"barcenola_2016.mp4"</video>
     </videos>
-    <coord latitud="41.570582" longitud="2.259647" altitud="125"></coord>
+    <coord latitud="41.570582" longitud="2.259647" altitud="130"></coord>
     <tramos>
-        <tramo></tramo>
+        <tramo distancia="750" latitud="41.565399" longitud="2.257394" altitud="120" nsector="01"></tramo>
+        <tramo distancia="150" latitud="41.564726" longitud="2.256074" altitud="125" nsector="01"></tramo>
+        <tramo distancia="100" latitud="41.564539" longitud="2.254607" altitud="127" nsector="02"></tramo>
+        <tramo distancia="500" latitud="41.566941" longitud="2.253079" altitud="139" nsector="03"></tramo>
+        <tramo distancia="500" latitud="41.566509" longitud="2.254687" altitud="142" nsector="04"></tramo>
+        <tramo distancia="250" latitud="41.565593" longitud="2.255528" altitud="133" nsector="05"></tramo>
+        <tramo distancia="250" latitud="41.567110" longitud="2.257640" altitud="126" nsector="06"></tramo>
+        <tramo distancia="100" latitud="41.567883" longitud="2.257146" altitud="129" nsector="07"></tramo>
+        <tramo distancia="150" latitud="41.568893" longitud="2.256494" altitud="138" nsector="08"></tramo>
+        <tramo distancia="250" latitud="41.571010" longitud="2.257518" altitud="146" nsector="09"></tramo>
     </tramos>
 </circuito>
