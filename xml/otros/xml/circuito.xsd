@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns="http://www.uniovi.es" 
+		   targetNamespace="http://www.uniovi.es" 
+		   elementFormDefault="qualified" 
+		   xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="circuito">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="name" minOccurs="1" maxOccurs="1"/>
+				<xs:element ref="longitud" minOccurs="1" maxOccurs="1"/>
+				<xs:element ref="anchura" minOccurs="1" maxOccurs="1"/>
+				<xs:element ref="fecha" minOccurs="1" maxOccurs="1"/>
+				<xs:element ref="hora-inicio" minOccurs="1" maxOccurs="1"/>
+				<xs:element ref="numero-vueltas" minOccurs="1" maxOccurs="1"/>
+				<xs:element ref="localidad" minOccurs="1" maxOccurs="1"/>
+				<xs:element ref="pais" minOccurs="1" maxOccurs="1"/>
+				<xs:element ref="bibliografia" minOccurs="1" maxOccurs="1"/>
+				<xs:element ref="galeria-fotos" minOccurs="1" maxOccurs="1"/>
+				<xs:element ref="galeria-videos" minOccurs="1" maxOccurs="1"/>
+				<xs:element ref="centro-pista" minOccurs="1" maxOccurs="1"/>
+				<xs:element ref="tramos" minOccurs="1" maxOccurs="1"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<!--Expresion del nombre-->
+	<xs:element name="name" type="xs:string" />
+	
+	<!--Expresion de la longuitud-->
+	<xs:element name="longitud">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="medidaPositiva">
+					<xs:attribute name="mesure" type="xs:string" use="required" />
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	
+	<!--Expresion de la anchura-->
+	<xs:element name="anchura">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="medidaPositiva">
+					<xs:attribute name="mesure" type="xs:string" use="required" />
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	
+	<!--Expresion tipo medidaPositiva (m>=0)-->
+	<xs:simpleType name="medidaPositiva">
+		<xs:restriction base="xs:double">
+			<xs:minInclusive value="0"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<!--Expresion de la fecha de la carrera-->
+	<xs:element name="fecha" type="xs:date" />
+
+	<!--Expresion de la hora de inicio-->
+	<xs:element name="hora-inicio" type="xs:time" />
+
+	<!--Expresion del numero de vueltas-->
+	<xs:element name="numero-vueltas" type="xs:unsignedInt" />
+	
+	<!--Expresion de la localidad del circuito-->
+	<xs:element name="localidad" type="xs:string" />
+
+	<!--Expresion del pais-->
+	<xs:element name="pais" type="xs:string" />
+	
+	<!--Expresion de la bibliografia (enlacces min:3)-->
+	<xs:element name="bibliografia">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="3" maxOccurs="unbounded" ref="enlace"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<!--Expresion del enlace-->
+	<xs:element name="enlace" type="xs:anyURI" />
+	
+	<!--Expresion de la galeria de fotos (1>imagen<5)-->
+	<xs:element name="galeria-fotos">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="1" maxOccurs="5" ref="imagen" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<!--Expresion de la galeria de videos (0>video<3)-->
+	<xs:element name="galeria-videos">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" maxOccurs="3" ref="video" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<!--Expresion de las imagenes-->
+	<xs:element name="imagen" type="xs:string" />
+
+	<!--Expresion de los videos-->
+	<xs:element name="video" type="xs:string" />
+
+	<!--Expresion del centro de la pista-->
+	<xs:element name="centro-pista">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="coordenada" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<!--Expresion de una coordenada-->
+	<xs:element name="coordenada">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="longitud-coord" />
+				<xs:element ref="latitud" />
+				<xs:element ref="altitud" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<!--Exprexion del tipo medidaLonguitud (-180.00=<long=<180.00)-->
+	<xs:simpleType name="medidaLonguitud">
+		<xs:restriction base="xs:double">
+			<xs:minInclusive value="-180.00"/>
+			<xs:maxInclusive value="180.00"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<!--Exprexion del tipo medidaLatitud (-90.00=<lati=<90.00)-->
+	<xs:simpleType name="medidaLatitud">
+		<xs:restriction base="xs:double">
+			<xs:minInclusive value="-90.00"/>
+			<xs:maxInclusive value="90.00"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<!--Expresion de la longuitud de una coordenada-->
+	<xs:element name="longitud-coord">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="medidaLonguitud">
+					<xs:attribute name="mesure" type="xs:string" use="required" />
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+
+	<!--Expresion de la latitud de una coordenada-->
+	<xs:element name="latitud">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="medidaLatitud">
+					<xs:attribute name="mesure" type="xs:string" use="required" />
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+
+	<!--Expresion de la altitud de una coordenada-->
+	<xs:element name="altitud">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="medidaPositiva">
+					<xs:attribute name="mesure" type="xs:string" use="required" />
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+
+	<!--Expresion de los tramos del circuito-->
+	<xs:element name="tramos">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="1" maxOccurs="unbounded" ref="tramo" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<!--Expresion de un tramo-->
+	<xs:element name="tramo">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="coordenada" />
+				<xs:element ref="distancia" />
+				<xs:element ref="sector" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<!--Expresion de la distancia-->
+	<xs:element name="distancia">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="medidaPositiva">
+					<xs:attribute name="mesure" type="xs:string" use="required" />
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+
+	<!--Expresion del sector-->
+	<xs:element name="sector">
+		<xs:simpleType>
+			<xs:restriction base="xs:integer">
+				<xs:enumeration value="1"/>
+				<xs:enumeration value="2"/>
+				<xs:enumeration value="3"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+</xs:schema>
