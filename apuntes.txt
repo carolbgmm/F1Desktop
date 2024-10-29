@@ -13,3 +13,21 @@ Equipo: Haas F1 Team
 
 Al final del proyecto, no puede pesar más de 90MB (la que permite el campus).
 NO UTILIZAR <embed> <iframe> o <Object>
+
+XAMP:
+
+botón de la derecha "Explorer" -> la carpeta importante es htdocs.
+    En esa carpeta meter la carpeta F1Desktop con todo.
+    Eliminar la práctica...
+Para importar un js:
+    <head>
+        ...
+        <script.src="js/pais.js"/>
+    </head>
+    <body>
+        ...
+        <script> ... </script>
+        ...
+    </body>
+
+Para dar transparencia a los colores #000A (con la A es suficiente, o eso he entendido)
