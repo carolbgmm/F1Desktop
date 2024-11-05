@@ -7,63 +7,29 @@ class Memoria{
     firstCard;
     secondCard;
 
-    elements = {
+    static elements = {
         "elements": [
-            {
-                "element": "Redbull",
-                "source":"https://upload.wikimedia.org/wikipedia/de/c/c4/Red_Bull_Racing_logo.svg",
-            },
-            {
-                "element": "Redbull",
-                "source":"https://upload.wikimedia.org/wikipedia/de/c/c4/Red_Bull_Racing_logo.svg",
-            },
-            {
-                "element": "McLaren",
-                "source":"https://upload.wikimedia.org/wikipedia/en/6/66/McLaren_Racing_logo.svg",
-            },
-            {
-                "element": "McLaren",
-                "source":"https://upload.wikimedia.org/wikipedia/en/6/66/McLaren_Racing_logo.svg",
-            },
-            {
-                "element": "Alpine",
-                "source":"https://upload.wikimedia.org/wikipedia/fr/b/b7/Alpine_F1_Team_2021_Logo.svg",
-            },
-            {
-                "element": "Alpine",
-                "source":"https://upload.wikimedia.org/wikipedia/fr/b/b7/Alpine_F1_Team_2021_Logo.svg",
-            },
-            {
-                "element": "AstonMartin",
-                "source":"https://upload.wikimedia.org/wikipedia/fr/7/72/Aston_Martin_Aramco_Cognizant_F1.svg",
-            },
-            {
-                "element": "AstonMartin",
-                "source":"https://upload.wikimedia.org/wikipedia/fr/7/72/Aston_Martin_Aramco_Cognizant_F1.svg",
-            },
-            {
-                "element": "Ferrari",
-                "source":"https://upload.wikimedia.org/wikipedia/de/c/c0/Scuderia_Ferrari_Logo.svg",
-            },
-            {
-                "element": "Ferrari",
-                "source":"https://upload.wikimedia.org/wikipedia/de/c/c0/Scuderia_Ferrari_Logo.svg",
-            },
-            {
-                "element": "Mercedes",
-                "source":"https://upload.wikimedia.org/wikipedia/commons/f/fb/Mercedes_AMG_Petronas_F1_Logo.svg",
-            },
-            {
-                "element": "Mercedes",
-                "source":"https://upload.wikimedia.org/wikipedia/commons/f/fb/Mercedes_AMG_Petronas_F1_Logo.svg",
-            }
+            {"element": "Redbull", "source":"https://upload.wikimedia.org/wikipedia/de/c/c4/Red_Bull_Racing_logo.svg"},
+            {"element": "Redbull", "source":"https://upload.wikimedia.org/wikipedia/de/c/c4/Red_Bull_Racing_logo.svg"},
+            {"element": "McLaren", "source":"https://upload.wikimedia.org/wikipedia/en/6/66/McLaren_Racing_logo.svg"},
+            {"element": "McLaren", "source":"https://upload.wikimedia.org/wikipedia/en/6/66/McLaren_Racing_logo.svg"},
+            {"element": "Alpine", "source":"https://upload.wikimedia.org/wikipedia/fr/b/b7/Alpine_F1_Team_2021_Logo.svg"},
+            {"element": "Alpine", "source":"https://upload.wikimedia.org/wikipedia/fr/b/b7/Alpine_F1_Team_2021_Logo.svg"},
+            {"element": "AstonMartin", "source":"https://upload.wikimedia.org/wikipedia/fr/7/72/Aston_Martin_Aramco_Cognizant_F1.svg"},
+            {"element": "AstonMartin", "source":"https://upload.wikimedia.org/wikipedia/fr/7/72/Aston_Martin_Aramco_Cognizant_F1.svg"},
+            {"element": "Ferrari", "source":"https://upload.wikimedia.org/wikipedia/de/c/c0/Scuderia_Ferrari_Logo.svg"},
+            {"element": "Ferrari", "source":"https://upload.wikimedia.org/wikipedia/de/c/c0/Scuderia_Ferrari_Logo.svg"},
+            {"element": "Mercedes", "source":"https://upload.wikimedia.org/wikipedia/commons/f/fb/Mercedes_AMG_Petronas_F1_Logo.svg"},
+            {"element": "Mercedes", "source":"https://upload.wikimedia.org/wikipedia/commons/f/fb/Mercedes_AMG_Petronas_F1_Logo.svg"}
         ]
     };
+
     constructor(){
-        this.hasFlippedCard = false;
-        this.lockBoard = false;
-        this.firstCard = null;
-        this.secondCard = null;
+        this.resetBoard();
+        this.shuffleElements();
+        document.write("hola");
+        this.createElements();
+        document.write("hola");
     }
 
     shuffleElements(){
@@ -79,10 +45,8 @@ class Memoria{
     unflipCards(){
         this.lockBoard = true;
         setTimeout(()=> {
-            this.firstCard.dataset.style = '';
-            this.secondCard.dataset.style = '';
             this.resetBoard();
-        }, 1000);
+        }, 2500);
         
     }
 
@@ -105,17 +69,41 @@ class Memoria{
         this.resetBoard();
     }
 
-    createElements() {
-        document.write("<section>")
-        document.write("<h2> Juego de memoria </h2>")
+    createElements() { 
+        document.write("hola");
+        console.log(JSON.parse(elements));
+        document.write(JSON.parse(elements));
+        var section = document.createElement(section);
+        var h2 = docuement.createElement("h2");
+        h2.appendChild(document.createTextNode("Juego de memoria"));
+        section.appendChild(h2);
+        
         for (let i in this.elements) {
-            document.write("<article data-element=\"" + this.elements[i].element + "\">")
-            document.write("<h3>Tarjeta de memoria</h3>")
-            document.write("<img src=\"" + this.elements[i].source + "\" alt=\"" + this.elements[i].element + "\">");
-            document.write("</article>")
+            document.write("hola");
+            // create the element article
+            var article = document.createElement(article);
+            // create and set the value to the attribute data-element
+            var dataElement = document.createAttribute("data-element");
+            dataElement.value = "\"" +   this.elements[i].element + "\"";
+            // create the h3 element and set the text
+            var h3 = docuement.createElement("h3");
+            h3.appendChild(document.createTextNode("Tarjeta de memoria"));
+            // create the img with attributes
+            var img = docuement.createElement("img");
+            var src = document.createAttribute("src");
+            src.value = "\"" +   this.elements[i].source + "\"";
+            var alt = document.createAttribute("alt");
+            alt.value = "\"" +   this.elements[i].element + "\"";
+            img.setAttribute(src);
+            img.setAttribute(alt);
+            // set the article
+            article.setAttribute(dataElement);
+            article.appendChild(h3);
+            article.appendChild(img);
+            section.appendChild(article);
         }
-        document.write("</section>")
+        document.body.appendChild(section);
+        docuement.write("hola");
     }
-
 
 }
