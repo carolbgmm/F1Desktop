@@ -1,0 +1,21 @@
+/*Carolina Barrios González uo275673*/
+
+/* Especificidad 001 */
+header{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+}
+
+/* Especificidad 001 */
+h1{
+    flex: 6;
+    order: -1;
+}
+
+/* Especificidad 001 */
+a {
+    flex: 1;
+}

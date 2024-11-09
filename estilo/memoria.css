@@ -1,0 +1,59 @@
+/* Developed by Nicolás Lozano García */
+
+/* Especificidad 001 */
+section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+/* Especificidad 002 */
+section h2 {
+    flex: 100%;
+}
+
+/* Especificidad 002 */
+section article {
+    flex: 25%;
+    background-color: #B0B54A;
+    align-self: stretch;
+    border: 0.1em solid #0C2900;
+    border-radius: 10px;
+
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transition: transform .5s;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+}
+
+/* Especificidad 012 */
+section article[data-style=flip] {
+    transform: rotateY(180deg);
+}
+
+section article h3 {
+    color: #1A1A1D;
+    /* background-color: #B0B54A, heredado de section article */
+    backface-visibility: hidden;
+    align-self: center;
+    position: absolute;
+}
+
+@media (max-width:800px) {
+
+    /* Especificidad 003 */
+    section article h3 {
+        font-size: medium;
+    }
+}
+
+/* Especificidad 003 */
+section article img {
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+    height: auto;
+    width: 5em;
+    position: relative;
+}
