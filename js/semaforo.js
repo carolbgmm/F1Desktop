@@ -13,16 +13,28 @@ class Semaforo{
     }
 
     createStructure(){
-        document.write("<section>");
-        document.write("<h3>Semáforo</h3>")
-        document.write("<section>");
+        var section = document.createElement("section");
+        var h2 = document.createElement("h2");
+        h2.appendChild(document.createTextNode("Semáforo"));
+        section.appendChild(h2);
+        var section2 = document.createElement("section");
         for(let i = 0; i<this.ligths; i++){
-            document.write("<div></div>");
+            section2.appendChild(document.createElement("div"));
         }
-        document.write("</section>");
-        document.write("<button>Start</button>");
-        document.write("<button>Ver tiempo de reacción</button>");
-        document.write("</section>");
+        section.appendChild(section2);
+        var section3 = document.createElement("section");
+        var startBtn = document.createElement("button");
+        var reactBtn = document.createElement("button");
+        startBtn.appendChild(document.createTextNode("Start"));
+        reactBtn.appendChild(document.createTextNode("Tiempo de reacción"));
+        section3.appendChild(startBtn);
+        section3.appendChild(reactBtn);
+        section.appendChild(section3);
+        document.body.appendChild(section);
+    }
+
+    initSequence(){
+
     }
 
 }
