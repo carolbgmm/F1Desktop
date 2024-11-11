@@ -1,0 +1,18 @@
+section{
+    display: grid;
+    
+}
+
+section section {
+    justify-content: center;
+    display: flex;
+}
+
+div {
+    background-color: #0007;
+    height: 150px;
+    aspect-ratio: 1;
+    border: 1em solid #000;
+    border-radius: 50%;
+
+}

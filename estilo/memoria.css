@@ -42,7 +42,6 @@ section article h3 {
 }
 
 @media (max-width:800px) {
-
     /* Especificidad 003 */
     section article h3 {
         font-size: medium;
