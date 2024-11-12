@@ -31,3 +31,4 @@ Para importar un js:
     </body>
 
 Para dar transparencia a los colores #000A (con la A es suficiente, o eso he entendido)
+API Fullscreen y API Canvas son autoexcluyentes

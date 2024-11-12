@@ -53,21 +53,34 @@ class Pais {
         var url = "https://api.openweathermap.org/data/2.5/forecast?lat=" + this.coordMeta.slice(0, 8) + "&lon=" + this.coordMeta.slice(10)+"&appid=" + this.apikey + "&units=metric&mode=xml&lang=es";
         $.ajax({
             url: url,
+            dataType: "xml",
             method: 'GET',
             success: function (datos) {
                 console.log(datos);
+                $("h5").text((new XMLSerializer()).serializeToString(datos));
+                var time =  $('time:first', datos);
+                var date =  $('time:first', datos).attr("from").slice(0, 10);
+                var forecast =  $('forecast time', datos);
+                console.log(time);
                 
+                for(let i = 0; i<forecast.length; i++){
+                    var nextTime = $('time:eq(' + i + ')', datos);
+                    var newDate = $('time:eq(' + i + ')', datos).attr("from").slice(0, 10);
+                    console.log(newDate);
+                    
+                }
                 
             },
             error: function (err) {
                 $("h3").html("¡Tenemos problemas! No puedo obtener JSON de <a href='http://openweathermap.org'>OpenWeatherMap</a>");
                 console.log(err)
+                
             }
         });
     }
-
 
 }
 
 var pais = new Pais("España", "Madrid", "48.797.875", );
 pais.setCoordMeta("41.570025 2.261211");
+pais.setNCircuito("Barcelona-Catalunya");
