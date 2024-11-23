@@ -24,15 +24,31 @@
     </videos>
     <coord latitud="41.570582" longitud="2.259647" altitud="130"></coord>
     <tramos>
-        <tramo distancia="750" latitud="41.565399" longitud="2.257394" altitud="120" nsector="01"></tramo>
-        <tramo distancia="150" latitud="41.564726" longitud="2.256074" altitud="125" nsector="01"></tramo>
-        <tramo distancia="100" latitud="41.564539" longitud="2.254607" altitud="127" nsector="02"></tramo>
-        <tramo distancia="500" latitud="41.566941" longitud="2.253079" altitud="139" nsector="03"></tramo>
-        <tramo distancia="500" latitud="41.566509" longitud="2.254687" altitud="142" nsector="04"></tramo>
-        <tramo distancia="250" latitud="41.565593" longitud="2.255528" altitud="133" nsector="05"></tramo>
-        <tramo distancia="250" latitud="41.567110" longitud="2.257640" altitud="126" nsector="06"></tramo>
-        <tramo distancia="100" latitud="41.567883" longitud="2.257146" altitud="129" nsector="07"></tramo>
-        <tramo distancia="150" latitud="41.568893" longitud="2.256494" altitud="138" nsector="08"></tramo>
-        <tramo distancia="250" latitud="41.571010" longitud="2.257518" altitud="146" nsector="09"></tramo>
+        <tramo distancia="0" latitud="41.570019" longitud="2.261233" altitud="130" nsector="01"></tramo>
+        <tramo distancia="250" latitud="41.567756" longitud="2.259325" altitud="133" nsector="01"></tramo>
+        <tramo distancia="250" latitud="41.566496" longitud="2.258293" altitud="130" nsector="01"></tramo>
+        <tramo distancia="250" latitud="41.564726" longitud="2.256074" altitud="126" nsector="01"></tramo>
+        <tramo distancia="140" latitud="41.564749" longitud="2.256035" altitud="124" nsector="01"></tramo>
+        <tramo distancia="110" latitud="41.564883" longitud="2.255374" altitud="127" nsector="01"></tramo> 
+        <!-- 1 km-->
+        <tramo distancia="250" latitud="41.565119" longitud="2.252126" altitud="136" nsector="01"></tramo>
+        <tramo distancia="250" latitud="41.566802" longitud="2.252785" altitud="139" nsector="01"></tramo>
+        <tramo distancia="250" latitud="41.568319" longitud="2.254963" altitud="142" nsector="02"></tramo>
+        <tramo distancia="100" latitud="41.567315" longitud="2.255270" altitud="144" nsector="02"></tramo>
+        <tramo distancia="150" latitud="41.566446" longitud="2.254595" altitud="142" nsector="02"></tramo>
+        <!-- 2 km-->
+        <tramo distancia="250" latitud="41.565833" longitud="2.256120" altitud="133" nsector="02"></tramo>
+        <tramo distancia="250" latitud="41.567377" longitud="2.257804" altitud="126" nsector="02"></tramo>
+        <tramo distancia="250" latitud="41.568813" longitud="2.256567" altitud="138" nsector="02"></tramo>
+        <tramo distancia="250" latitud="41.570771" longitud="2.256893" altitud="146" nsector="02"></tramo>
+        <!-- 3 km-->
+        <tramo distancia="250" latitud="41.571946" longitud="2.259822" altitud="143" nsector="02"></tramo>
+        <tramo distancia="200" latitud="41.572968" longitud="2.261954" altitud="140" nsector="03"></tramo>
+        <tramo distancia="50" latitud="41.573324" longitud="2.261530" altitud="141" nsector="03"></tramo>
+        <tramo distancia="250" latitud="41.573883" longitud="2.259323" altitud="149" nsector="03"></tramo>
+        <tramo distancia="250" latitud="41.574632" longitud="2.261613" altitud="145" nsector="03"></tramo>
+        <!-- 4 km-->
+        <tramo distancia="250" latitud="41.573667" longitud="2.263470" altitud="134" nsector="03"></tramo>
+        <tramo distancia="250" latitud="41.571847" longitud="2.262729" altitud="130" nsector="03"></tramo>
     </tramos>
 </circuito>
