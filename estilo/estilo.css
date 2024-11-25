@@ -97,7 +97,6 @@ section article {
     border-radius: 10px;
     
     margin: 10px;
-    cursor: pointer;
     transform-style: preserve-3d;
     height: 300px;
     display:grid;

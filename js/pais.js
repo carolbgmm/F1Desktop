@@ -83,8 +83,8 @@ class Pais {
                             html += "<article>";
                             html += "<h4>" + lastDate + "</h4>";
                             html += "<img src='https://openweathermap.org/img/wn/" + $('symbol:eq(' + parseInt(i-(i- lastDateI)/2) + ')', datos).attr("var")  +"@2x.png'/>";
-                            html += "<p>Máxima:" + maxTemp +"ºC</p>";
-                            html += "<p>Mínima:" + minTemp +"ºC</p>";
+                            html += "<p>Máxima: " + maxTemp +"ºC</p>";
+                            html += "<p>Mínima: " + minTemp +"ºC</p>";
                             html += "</article>";
                             lastDateI = i;
                         }
@@ -98,8 +98,8 @@ class Pais {
                 html += "<article>";
                 html += "<h4>" + lastDate + "</h4>";
                 html += "<img src='https://openweathermap.org/img/wn/" + $('symbol:eq(' + parseInt(forecast.length-(forecast.length- lastDateI)/2) + ')', datos).attr("var")  +"@2x.png'/>";
-                html += "<p>Máxima:" + maxTemp +"ºC</p>";
-                html += "<p>Mínima:" + minTemp +"ºC</p>";
+                html += "<p>Máxima: " + maxTemp +"ºC</p>";
+                html += "<p>Mínima: " + minTemp +"ºC</p>";
                 html += "</article>";
                 $("section").append(html);
                 
