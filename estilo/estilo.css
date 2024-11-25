@@ -84,6 +84,26 @@ audio {
     max-width: 100%;
 }
 
+section {
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 20px;
+}
+
+section article {
+    flex: 15%;
+    border: 0.1em solid #0C2900;
+    border-radius: 10px;
+    
+    margin: 10px;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    height: 300px;
+    display:grid;
+    justify-content: center;
+}
+
 
 
 
