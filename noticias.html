@@ -12,6 +12,11 @@
     <link rel="stylesheet" type="text/css" href="estilo/estilo.css" />  
     <link rel="stylesheet" type="text/css" href="estilo/layout.css" />
     <link rel="icon" href="multimedia/imagenes/favicon.ico"/>
+    <script src="js/noticias.js"></script>
+    <script
+        src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+        crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -30,7 +35,29 @@
         </nav>
     </header>
     <p>Estás en: <a href="index.html" title="inicio">Inicio</a> >> Noticias</p>
-    <h2>Noticias</h2>
-    <p>En desarrollo</p>
+    <main>
+        <section>
+            <h2> Noticias</h2>
+            <label>Leer archvio de noticias:
+                <input type="file" onchange="noticias.readInputFile(this.files);">
+            </label>
+        </section>
+        <section>
+            <h3> Insertar noticia</h3>
+            <label>Título
+                <textarea placeholder="Título"></textarea>
+            </label>
+            <label>Entradilla
+                <textarea placeholder="Entradilla"></textarea>
+            </label>
+            <label>Contenido
+            <textarea placeholder="Contenido de la noticia"></textarea>
+            </label>
+            <label>Autor
+                <textarea placeholder="Autor"></textarea>
+            </label>
+            <button onclick="noticias.addNoticia()">Añadir Noticia</button>
+        </section>
+    </main>
 </body>
 </html>
