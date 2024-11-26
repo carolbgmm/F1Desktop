@@ -5,13 +5,19 @@ section{
 section section {
     justify-content: center;
     display: flex;
+    margin:2%;
 }
 
 div {
     background-color: #0007;
-    height: 150px;
+    height: 200px;
     aspect-ratio: 1;
-    border: 1em solid #000;
+    border: 0.5em solid #000;
     border-radius: 50%;
+    margin:2%;
 
+}
+
+button{
+    margin: 1%;
 }
