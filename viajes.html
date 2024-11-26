@@ -12,6 +12,7 @@
     <link rel="stylesheet" type="text/css" href="estilo/estilo.css" />
     <link rel="stylesheet" type="text/css" href="estilo/layout.css" />
     <link rel="icon" href="multimedia/imagenes/favicon.ico"/>
+    <script src="js/viajes.js"></script>
 </head>
 
 <body>
@@ -31,6 +32,10 @@
     </header>
     <p>Estás en: <a href="index.html" title="inicio">Inicio</a> >> Viajes</p>
     <h2>Viajes</h2>
-    <p>En desarrollo</p>
+    <main id="ubicacion">
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD3k7yZNPOEKeeFsGYF0329YKwyMWL6MsY&callback=viajes.initMap()"></script>
+        <input type="button" value="Obtener mapa estático" onClick = "viajes.getMapaEstaticoGoogle('ubicacion');"/>
+    </main>
+
 </body>
 </html>
