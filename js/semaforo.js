@@ -13,7 +13,7 @@ class Semaforo{
     }
 
     createStructure(){
-        var section = document.getElementById("sectionSemaforo");
+        var section = document.createElement("section");
         var h2 = document.createElement("h2");
         h2.appendChild(document.createTextNode("Semáforo"));
         
@@ -23,17 +23,37 @@ class Semaforo{
             div.id = "div" + i;
             section2.appendChild(div);
         }
-        var startBtn = document.getElementById("btnArranque");
-        var reactBtn = document.getElementById("btnReaccion");
+        var section3 = document.createElement("section");
+        var startBtn = document.createElement("button");
+        var reactBtn = document.createElement("button");
+        section3.append(startBtn);
+        section3.append(reactBtn);
         startBtn.appendChild(document.createTextNode("Arranque"));
+        startBtn.setAttribute("onclick", "semaforo.initSequence()");
         reactBtn.appendChild(document.createTextNode("Reacción"));
-        section.prepend(section2);
-        section.prepend(h2)
-
+        section.append(h2)
+        section.append(section2);
+        section.append(section3);
+        document.body.append(section);
+        
+    
     }
 
     initSequence(){
-        document.getElementsById("div0");
+        var div0 = document.getElementById("div0");
+        var div1 = document.getElementById("div1");
+        var div2 = document.getElementById("div2");
+        var div3 = document.getElementById("div3");
+        div0.className ="load";
+        setTimeout(function(){
+            div1.className ="load";
+        }, 750);
+        setTimeout(function(){
+            div2.className ="load";
+        }, 1500);
+        setTimeout(function(){
+            div3.className ="load";
+        }, 2250);
     }
 
 }

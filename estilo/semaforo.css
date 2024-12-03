@@ -18,6 +18,10 @@ div {
 
 }
 
+div.load{
+    background-color: #ff0000;
+}
+
 button{
     margin: 1%;
 }

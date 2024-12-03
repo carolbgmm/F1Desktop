@@ -104,7 +104,6 @@ class Memoria{
         document.querySelectorAll("article").forEach(card =>
             card.addEventListener("click", this.flipCard.bind(this, this, card))
         )
-
     }
 
     flipCard(game, card) {
