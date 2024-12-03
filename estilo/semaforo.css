@@ -1,3 +1,8 @@
+@keyframes colorBack{
+    from{background-color: #0007;}
+    to{background-color: #ff0000;}
+}
+
 section{
     display: grid;   
 }
@@ -18,8 +23,30 @@ div {
 
 }
 
-div.load{
-    background-color: #ff0000;
+main.load div:first-of-type{
+    animation-name:colorBack;
+    animation-duration:0.5s;
+    animation-fill-mode: forwards;
+}
+
+main.load div:nth-of-type(2){
+    animation-name:colorBack;
+    animation-duration:0.5s;
+    animation-delay: 0.125s;
+    animation-fill-mode: forwards;
+}
+
+main.load div:nth-of-type(3){
+    animation-name:colorBack;
+    animation-duration:0.5s;
+    animation-delay: 0.25s;
+    animation-fill-mode: forwards;
+}
+
+main.load div:nth-of-type(4){
+    animation-name:colorBack;
+    animation-delay: 0.375s;
+    animation-fill-mode: forwards;
 }
 
 button{
