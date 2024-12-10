@@ -11,6 +11,7 @@
     <meta name="author" content="Carolina Barrios Gonzalez"/>
     <link rel="stylesheet" type="text/css" href="estilo/estilo.css" />
     <link rel="stylesheet" type="text/css" href="estilo/layout.css" />
+    <link rel="stylesheet" type="text/css" href="estilo/viajes.css" />
     <link rel="icon" href="multimedia/imagenes/favicon.ico"/>
     <script src="js/viajes.js"></script>
 </head>
@@ -33,7 +34,8 @@
     <p>Estás en: <a href="index.html" title="inicio">Inicio</a> >> Viajes</p>
     <h2>Viajes</h2>
     <main id="ubicacion">
-        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD3k7yZNPOEKeeFsGYF0329YKwyMWL6MsY&callback=viajes.initMap()"></script>
+        <div></div>
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD3k7yZNPOEKeeFsGYF0329YKwyMWL6MsY&callback=viajes.initMap"></script>
         <input type="button" value="Obtener mapa estático" onClick = "viajes.getMapaEstaticoGoogle('ubicacion');"/>
     </main>
 

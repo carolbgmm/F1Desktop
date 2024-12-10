@@ -87,15 +87,17 @@ class Viajes{
         ubicacion.innerHTML = "<img src='"+this.imagenMapa+"' alt='mapa estático google' />";
     }
 
+    
+
     initMap(){  
         var centro = {lat: 43.3672702, lng: -5.8502461};
-        var mapaGeoposicionado = new google.maps.Map(document.getElementById('mapa'),{
+        var mapaGeoposicionado = new google.maps.Map(document.getElementsByTagName("div")[0],{
             zoom: 8,
             center:centro,
             mapTypeId: google.maps.MapTypeId.ROADMAP
         });
         
-        infoWindow = new google.maps.InfoWindow;
+        var infoWindow = new google.maps.InfoWindow;
         if (navigator.geolocation) {
               navigator.geolocation.getCurrentPosition(function(position) {
                 var pos = {
