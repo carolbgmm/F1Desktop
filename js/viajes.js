@@ -2,6 +2,8 @@
 
 class Viajes{
 
+    kmlFile;
+
     constructor(){
         navigator.geolocation.getCurrentPosition(this.getPosicion.bind(this),  this.verErrores.bind(this));
     }
@@ -116,6 +118,34 @@ class Viajes{
             // Browser doesn't support Geolocation
             handleLocationError(false, infoWindow, mapaGeoposicionado.getCenter());
         }
+    }
+
+    initKmlMap(){  
+        var map = new google.maps.Map(document.getElementsByTagName("div")[0], {
+            center: new google.maps.LatLng(-19.257753, 146.823688),
+            zoom: 2,
+            mapTypeId: 'terrain'
+          });
+        
+        var kmlLayer = new google.maps.KmlLayer(this.kmlFile, {
+            suppressInfoWindows: true,
+            preserveViewport: false,
+            map: map,
+          });
+        kmlLayer.addListener('click', function(event) {
+            var content = event.featureData.infoWindowHtml;
+            var testimonial = document.getElementById('capture');
+            testimonial.innerHTML = content;
+          });
+    }
+
+    setFile(file){
+        this.kmlFile = file;
+        var script = document.createElement("script");
+        script.setAttribute("async", "");
+        script.setAttribute("defer", "");
+        script.setAttribute("src", "https://maps.googleapis.com/maps/api/js?key=AIzaSyD3k7yZNPOEKeeFsGYF0329YKwyMWL6MsY&callback=viajes.initKmlMap");
+        document.getElementsByTagName("main")[0].append(script);
     }
     
     handleLocationError(browserHasGeolocation, infoWindow, pos) {

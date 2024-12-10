@@ -66,7 +66,7 @@ def createKml(listaCoord, desc,output):
                   listaCoord[len(listaCoord)-1][2] + '</coordinates>\n' +
                   '</Point>\n</Placemark>\n')
 
-    file.write('<name>'+ desc[0] + '</name>\n')
+ 
 
     file.write('<Placemark>\n' +
                     '<name>' + desc[0] + '</name>\n' +
