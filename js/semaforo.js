@@ -83,6 +83,27 @@ class Semaforo{
         reactBtn.setAttribute("disabled", "true");
         var startBtn = document.getElementsByTagName("button")[0];
         startBtn.removeAttribute("disabled");
+        this.createRecordForm(milliseconds);
+    }
+
+    createRecordForm(tiempo){
+        var section = $("main");
+        var form = $("<form></form>", {action: "semaforo.php", method : "post"});
+        var ul = $("<ul></ul>").appendTo(form);
+        var liname = $("<li></li>").appendTo(ul);
+        $("<label></label>").text("Nombre:").appendTo(liname);
+        $("<input></input>", { type: "text", id: "nombre", name: "nombre" }).prop("required", true).appendTo(liname);
+        var lisurname = $("<li></li>").appendTo(ul);
+        $("<label></label>").text("Apellidos:").appendTo(lisurname);
+        $("<input></input>", { type: "text", id: "apellidos", name: "apellidos" }).prop("required", true).appendTo(lisurname);
+        var lidif = $("<li></li>").appendTo(ul);
+        $("<label></label>").text("Dificultad:").appendTo(lidif);
+        $("<input></input>", { type: "text", id: "nivel", name: "nivel", value: this.difficulty }).prop("readonly", true).appendTo(lidif);
+        var litime = $("<li></li>").appendTo(ul);
+        $("<label></label>").text("Tiempo:").appendTo(litime);
+        $("<input></input>", { type: "text", id: "tiempo", name: "tiempo", value: tiempo }).prop("readonly", true).appendTo(litime);
+        $("<input></input>", { type: "submit", value: "Confirmar" }).appendTo(form)
+        section.append(form);
     }
 
 }
