@@ -47,6 +47,7 @@ class Pais {
         document.write("<p>Coordenadas de la línea de meta del circuito: " + this.coordMeta + "</p>");
     }
 
+
     //Haz que el servicio web devuelva la información del tiempo en formato XML, en idioma español y con unidades de medida del sistema métrico.
     apikey = "4e7ac9eaf132fd8c0117221734ed2258";
     getMeteoData() {

@@ -155,6 +155,43 @@ class Viajes{
                                 'Error: Su navegador no soporta geolocalización');
         infoWindow.open(mapaGeoposicionado);
     }
+
+    slides;
+    curSlide;
+    maxSlide;
+    showCarrusel() {
+        self = this;
+        var article = document.querySelector("aside article");
+
+        this.slides = document.querySelector("aside").querySelector("article").querySelectorAll("img");
+        this.curSlide = 0;
+        this.maxSlide = this.slides.length - 1;
+
+        $("<button></button>").attr("data-action", "next").append(">").click(function () {
+            if (self.curSlide == self.maxSlide) {
+                self.curSlide = 0;
+            } else {
+                self.curSlide++;
+            }
+            self.slides.forEach((slide, indx) => {
+                var trans = 100 * (indx - self.curSlide);
+                $(slide).css('transform', 'translateX(' + trans + '%)')
+            });
+        }).appendTo(article);
+        $("<button></button>").attr("data-action", "prev").append("<").click(function () {
+            if (self.curSlide == 0) {
+                self.curSlide = self.maxSlide;
+            } else {
+                self.curSlide--;
+            }
+            self.slides.forEach((slide, indx) => {
+                var trans = 100 * (indx - self.curSlide);
+                $(slide).css('transform', 'translateX(' + trans + '%)')
+            });
+        }).appendTo(article);
+
+
+    }
 }
 
 var viajes = new Viajes();
