@@ -43,6 +43,23 @@
         }
     }
 
+    class Moneda{
+        protected $local;
+        protected $cambio;
+        public function __construct($local, $cambio){
+            $this->local = $local;
+            $this->cambio = $cambio;
+        }
+
+        public function convert($monto)
+        {
+            //usando ExchangeRate-API (https://www.exchangerate-api.com/)
+            $get = file_get_contents("https://v6.exchangerate-api.com/v6/c2fe84c31d56e6a4bd15d5f2/pair/$this->local/$this->cambio/$monto");
+            $data = json_decode($get, true);
+            echo "<p> Conversión: " . $monto . $this->local . " is " . $data["conversion_result"] . $this->cambio . "</p>";
+        }
+    }
+
 ?>
 
 <!DOCTYPE HTML>
@@ -76,7 +93,7 @@
             <a href="calendario.html" accesskey="c" tabindex="4" title="calendario">Calendario</a>
             <a href="meteorologia.html" accesskey="m" tabindex="5" title="meteorologia">Meteorologia</a>
             <a href="circuito.html" accesskey="r" tabindex="6" title="circuito">Cirtuito</a>
-            <a href="viajes.html" accesskey="v" tabindex="7" title="viajes">Viajes</a>
+            <a href="viajes.php" accesskey="v" tabindex="7" title="viajes">Viajes</a>
             <a href="juegos.html" accesskey="j" tabindex="8" title="juegos">Juegos</a>
         </nav>
     </header>
@@ -89,8 +106,19 @@
         <?php
             $carrusel = new Carrusel("F1", "Barcelona-Catalunya");
             $carrusel->getImages();
+
+            if (count($_POST) > 0) {
+                $moneda = new Moneda("EUR", "USD");
+                $moneda->convert($_POST["monto"]);
+            }
         ?>
         <script>viajes.showCarrusel();</script>
+        <form method="post" >
+            <label> Convertir de euro a dólar:
+                <input type="text" id="monto" name="monto" />
+            </label>
+            <input type="submit" value="Convertir" />
+        </form>
     </main>
 
 </body>
