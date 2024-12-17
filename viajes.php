@@ -101,9 +101,9 @@
     <h2>Viajes</h2>
     <main>
         <input type="button" value="Obtener mapa estático" onClick = "viajes.getMapaEstaticoGoogle('ubicacion');"/>
-        <div id="ubicacion"></div>
-        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD3k7yZNPOEKeeFsGYF0329YKwyMWL6MsY&callback=viajes.initMap"></script>
-        <?php
+        <article id="ubicacion"></article>
+    </main>
+    <?php
             $carrusel = new Carrusel("F1", "Barcelona-Catalunya");
             $carrusel->getImages();
 
@@ -119,7 +119,8 @@
             </label>
             <input type="submit" value="Convertir" />
         </form>
-    </main>
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD3k7yZNPOEKeeFsGYF0329YKwyMWL6MsY&callback=viajes.initMap"></script>
+        
 
 </body>
 </html>

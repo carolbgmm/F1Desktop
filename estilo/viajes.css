@@ -1,8 +1,8 @@
-div {
-    width:100%; 
-    height:50vw; 
-   }
-  
+
+main article {
+  width:100%; 
+  height:50vw; 
+}
   article {
     width: 100%;
     max-width: 100vh;

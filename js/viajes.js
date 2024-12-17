@@ -3,9 +3,11 @@
 class Viajes{
 
     kmlFile;
+    dinamicMap;
 
     constructor(){
         navigator.geolocation.getCurrentPosition(this.getPosicion.bind(this),  this.verErrores.bind(this));
+        this.dinamicMap = false;
     }
 
     getPosicion(posicion){
@@ -91,61 +93,85 @@ class Viajes{
 
     
 
-    initMap(){  
-        var centro = {lat: 43.3672702, lng: -5.8502461};
-        var mapaGeoposicionado = new google.maps.Map(document.getElementsByTagName("div")[0],{
-            zoom: 8,
-            center:centro,
-            mapTypeId: google.maps.MapTypeId.ROADMAP
-        });
+    async initMap(){  
+        if(!this.dinamicMap){
+            await google.maps.importLibrary("maps");
+            var centro = {lat: 43.3672702, lng: -5.8502461};
+            var map = document.createElement("article");
+            let mapaGeoposicionado = new google.maps.Map(map,{
+                zoom: 10,
+                center:centro,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            });
+            
+            let infoWindow = new google.maps.InfoWindow;
         
-        var infoWindow = new google.maps.InfoWindow;
-        if (navigator.geolocation) {
-              navigator.geolocation.getCurrentPosition(function(position) {
-                var pos = {
-                  lat: position.coords.latitude,
-                  lng: position.coords.longitude
-                };
+            infoWindow.setPosition(centro);
+            infoWindow.setContent('Localización encontrada');
+            infoWindow.open(mapaGeoposicionado);
+            mapaGeoposicionado.setCenter(centro);
     
-                infoWindow.setPosition(pos);
-                infoWindow.setContent('Localización encontrada');
-                infoWindow.open(mapaGeoposicionado);
-                mapaGeoposicionado.setCenter(pos);
-              }, function() {
-                handleLocationError(true, infoWindow, mapaGeoposicionado.getCenter());
-              });
-        } else {
-            // Browser doesn't support Geolocation
-            handleLocationError(false, infoWindow, mapaGeoposicionado.getCenter());
+            var main = document.querySelector("main");
+            main.prepend(map);
+            this.dinamicMap = true;
         }
-    }
-
-    initKmlMap(){  
-        var map = new google.maps.Map(document.getElementsByTagName("div")[0], {
-            center: new google.maps.LatLng(-19.257753, 146.823688),
-            zoom: 2,
-            mapTypeId: 'terrain'
-          });
         
-        var kmlLayer = new google.maps.KmlLayer(this.kmlFile, {
-            suppressInfoWindows: true,
-            preserveViewport: false,
-            map: map,
-          });
-        kmlLayer.addListener('click', function(event) {
-            var content = event.featureData.infoWindowHtml;
-            var testimonial = document.getElementById('capture');
-            testimonial.innerHTML = content;
-          });
     }
 
-    setFile(file){
-        this.kmlFile = file;
+    async setFile(files){
+        this.kmlFile = files[0];
         var script = document.createElement("script");
-        script.setAttribute("async", "");
-        script.setAttribute("defer", "");
-        script.setAttribute("src", "https://maps.googleapis.com/maps/api/js?key=AIzaSyD3k7yZNPOEKeeFsGYF0329YKwyMWL6MsY&callback=viajes.initKmlMap");
         document.getElementsByTagName("main")[0].append(script);
+        var lector = new FileReader();
+
+        console.log("before load");
+        lector.onload = function (event) {
+            console.log("hey");
+            var kmlText = event.target.result;  // El contenido del archivo KML como texto
+
+            // Convierte el texto KML a un documento XML
+            var parser = new DOMParser();
+            var kmlDoc = parser.parseFromString(kmlText, 'text/xml');
+
+            // Obtiene todos los elementos Placemark del documento KML
+            var placemarks = kmlDoc.getElementsByTagName('Placemark');
+            var pathlinecoords = []
+            for (var i = 0; i < placemarks.length; i++) {
+                console.log(placemarks);
+                var placemark = placemarks[i];
+                console.log(placemark);
+                // Obtiene las coordenadas del Placemark
+                var coordinates = placemark.getElementsByTagName('coordinates')[0].textContent.split(',');
+
+                if (self.kmlMap == undefined) {
+                    var mapArt = document.getElementsByTagName("div")[0];
+                    self.kmlMap = new google.maps.Map(mapArt, {
+                        zoom: 14,
+                        center: { lat: parseFloat(coordinates[1]), lng: parseFloat(coordinates[0]) }
+                    });
+                }
+
+                // Crea un marcador en el mapa para cada Placemark
+                new google.maps.Marker({
+                    position: { lat: parseFloat(coordinates[1]), lng: parseFloat(coordinates[0]) },
+                    title: "",
+                    map: self.kmlMap
+                });
+
+                pathlinecoords.push(new google.maps.LatLng(parseFloat(coordinates[1]), parseFloat(coordinates[0])));
+
+            }
+            var pathLine = new google.maps.Polyline({
+                path: pathlinecoords,
+                strokeColor: "#FF0000",
+                strokeOpacity: 1.0,
+                strokeWeight: 2
+            });
+            pathLine.setMap(self.kmlMap)
+        };
+        console.log("post load");
+        lector.readAsText(this.kmlFile);
+        
     }
     
     handleLocationError(browserHasGeolocation, infoWindow, pos) {

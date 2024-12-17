@@ -46,7 +46,6 @@ def getListaDesc(archivoXML):
     return list
 
 def createKml(listaCoord, desc,output):
-
     try:
         file = open("./" + output + ".kml", "w")
     except FileExistsError:
@@ -57,31 +56,12 @@ def createKml(listaCoord, desc,output):
 
     file.write('<Document>\n')
     #Linea de salida
-    file.write('<Placemark>\n' +
-                  '<name>Meta</name>\n' +
-                  '<description>' + desc[0] + '</description>\n' +
-                  '<Point>\n<coordinates>' +
-                  listaCoord[len(listaCoord)-1][0] + ',' +
-                  listaCoord[len(listaCoord)-1][1] + ',' +
-                  listaCoord[len(listaCoord)-1][2] + '</coordinates>\n' +
-                  '</Point>\n</Placemark>\n')
-
- 
-
-    file.write('<Placemark>\n' +
-                    '<name>' + desc[0] + '</name>\n' +
-                    '<description>' + desc[1] + '</description>' +
-                    '<LineString>\n<coordinates>\n')
-
     for coord in listaCoord:
-        file.write(coord[0] + ',' + coord[1] + ',' + coord[2] + '\n')
+        file.write('<Placemark>\n <name>Meta</name>\n <description>' + desc[0] + '</description>\n <Point>\n<coordinates>' + coord[0] + ',' + coord[1] + ',' + coord[2] + '\n'
+                   + '</coordinates>\n </Point>\n</Placemark>\n')
 
-    file.write(listaCoord[0][0] + ',' + listaCoord[0][1] + ',' + listaCoord[0][2] + '\n')
-
-    file.write('</coordinates>\n</LineString>\n')
-    file.write('<Style>\n<LineStyle>\n<color>#ff0000ff</color>\n' +
-                    '</LineStyle>\n</Style>\n')
-    file.write('</Placemark>\n</Document>\n</kml>')
+    #Cerrar todo
+    file.write('</Document>\n</kml>')
     file.close()
     print("Archivo generado correctamente")
 
