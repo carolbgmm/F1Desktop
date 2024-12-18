@@ -238,7 +238,7 @@
             <a href="../juegos.html" accesskey="j" tabindex="8" title="juegos">Juegos</a>
         </nav>
     </header>
-    <p>Estás en: <a href="index.html" title="inicio">Inicio</a> >> <a href="juegos.html" title="juegos">Juegos</a> >> Recetario</p>
+    <p>Estás en: <a href="../index.html" title="inicio">Inicio</a> >> <a href="../juegos.html" title="juegos">Juegos</a> >> Recetario</p>
     <h2>Recetario</h2>
     <nav>
         <a href="../memoria.html" accesskey="e" tabindex="1">Memoria</a>

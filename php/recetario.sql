@@ -22,6 +22,12 @@ CREATE TABLE `instrucciones` (
   `descripción` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci
 
+CREATE TABLE `receta_ingredientes` (
+  `id_receta` int(11) NOT NULL,
+  `id_ingrediente` int(11) NOT NULL,
+  `cantidad` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci
+
 INSERT INTO `categoria`(`id_categoria`, `nomre_categoria`) VALUES ('1','entrante');
 INSERT INTO `categoria`(`id_categoria`, `nomre_categoria`) VALUES ('2','carne');
 INSERT INTO `categoria`(`id_categoria`, `nomre_categoria`) VALUES ('3','pescado');
