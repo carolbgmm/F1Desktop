@@ -56,8 +56,8 @@
 <head>
     <meta charset="UTF-8" />
     <title>F1 Desktop juegos, memoria</title>
-    <meta name="description" content="Página de juegos de F1 Desktop"/>
-    <meta name="keywords" content="F1 Desktop"/>
+    <meta name="description" content="Página de juego de semáforo de F1D"/>
+    <meta name="keywords" content="F1,desktop,semaforo"/>
     <meta name ="viewport" content ="width=device-width, initial-scale=1.0" />
     <meta name="author" content="Carolina Barrios Gonzalez"/>
     <link rel="stylesheet" type="text/css" href="estilo/estilo.css" />
@@ -87,6 +87,7 @@
         <nav>
             <a href="memoria.html" accesskey="e" tabindex="1">Memoria</a>
             <a href="semaforo.php" accesskey="s" tabindex="2">Semáforo</a>
+            <a href="api.php" accesskey="a" tabindex="2">API</a>
             <a href="php/recetario.php" accesskey="s" tabindex="2">Recetario</a>
         </nav>
         

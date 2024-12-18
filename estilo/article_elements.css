@@ -1,3 +1,6 @@
+/*Carolina Barrios González uo275673*/
+
+/*Especifidad 001*/
 section {
     display:flex;
     flex-wrap: wrap;
@@ -5,6 +8,7 @@ section {
     margin: 20px;
 }
 
+/*Especifidad 002*/
 section article {
     flex: 15%;
     border: 0.1em solid #0C2900;

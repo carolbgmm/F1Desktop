@@ -1,5 +1,4 @@
-/* Developed by Nicolás Lozano García */
-
+/*Carolina Barrios González uo275673*/
 /* Especificidad 001 */
 section {
     display: flex;
@@ -33,6 +32,7 @@ section article[data-style=flip] {
     transform: rotateY(180deg);
 }
 
+/* Especificidad 03 */
 section article h3 {
     color: #1A1A1D;
     /* background-color: #B0B54A, heredado de section article */
@@ -42,7 +42,7 @@ section article h3 {
 }
 
 @media (max-width:800px) {
-    /* Especificidad 003 */
+  /* Especificidad 003 */
     section article h3 {
         font-size: medium;
     }
@@ -67,15 +67,20 @@ section article img {
   position: relative;
   animation: l6 1.5s infinite 0.5s;
 }
+
 .loader:before,
 .loader:after{
   content: "";
+  /*Advertencia comprobada y necesaria. No afecta a nada que no deba afectar*/
   position: absolute;
   left: calc(100% + 5px);
+  /*Advertencia comprobada y necesaria. No afecta a nada que no deba afectar*/
   animation-delay: 1s;
 }
 .loader:after{
+  /*Advertencia comprobada y necesaria. No afecta a nada que no deba afectar*/
   left: -40px;
+  /*Advertencia comprobada y necesaria. No afecta a nada que no deba afectar*/
   animation-delay: 0s;
 }
 @keyframes l6 {

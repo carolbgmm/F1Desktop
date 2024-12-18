@@ -69,8 +69,8 @@
     <!-- Datos que describen el documento -->
     <meta charset="UTF-8" />
     <title>F1 Desktop viajes</title>
-    <meta name="description" content="viajes"/>
-    <meta name="keywords" content="viajes"/>
+    <meta name="description" content="Página de viajes de F1D"/>
+    <meta name="keywords" content="viajes,f1,circuito,desktop"/>
     <meta name ="viewport" content ="width=device-width, initial-scale=1.0" />
     <meta name="author" content="Carolina Barrios Gonzalez"/>
     <link rel="stylesheet" type="text/css" href="estilo/estilo.css" />

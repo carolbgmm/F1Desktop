@@ -213,8 +213,8 @@
     <!-- Datos que describen el documento -->
     <meta charset="UTF-8" />
     <title>F1 Desktop juegos</title>
-    <meta name="description" content="juegos"/>
-    <meta name="keywords" content="juegos"/>
+    <meta name="description" content="Página de recetario de F1D"/>
+    <meta name="keywords" content="recetario,desktop"/>
     <meta name ="viewport" content ="width=device-width, initial-scale=1.0" />
     <meta name="author" content="Carolina Barrios Gonzalez"/>
     <link rel="stylesheet" type="text/css" href="../estilo/estilo.css" />
@@ -226,7 +226,7 @@
 <body>
     <!-- Datos con el contenidos que aparece en el navegador -->
     <header>
-        <h1><a href="index.html" title="inicio">F1 Desktop</a></h1>
+        <h1><a href="../index.html" title="inicio">F1 Desktop</a></h1>
         <nav>
             <a href="../index.html" accesskey="i" tabindex="1" title="inicio">Inicio</a>
             <a href="../piloto.html" accesskey="p" tabindex="2" title="piloto">Piloto</a>
@@ -243,6 +243,7 @@
     <nav>
         <a href="../memoria.html" accesskey="e" tabindex="1">Memoria</a>
         <a href="../semaforo.php" accesskey="s" tabindex="2">Semáforo</a>
+        <a href="../api.php" accesskey="a" tabindex="2">API</a>
         <a href="recetario.php" accesskey="s" tabindex="2">Recetario</a>
     </nav>
     <main>

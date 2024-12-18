@@ -27,28 +27,55 @@
         <tramo distancia="0" latitud="41.570019" longitud="2.261233" altitud="130" nsector="01"></tramo>
         <tramo distancia="250" latitud="41.567756" longitud="2.259325" altitud="133" nsector="01"></tramo>
         <tramo distancia="250" latitud="41.566496" longitud="2.258293" altitud="130" nsector="01"></tramo>
-        <tramo distancia="250" latitud="41.564726" longitud="2.256074" altitud="126" nsector="01"></tramo>
-        <tramo distancia="140" latitud="41.564749" longitud="2.256035" altitud="124" nsector="01"></tramo>
-        <tramo distancia="110" latitud="41.564883" longitud="2.255374" altitud="127" nsector="01"></tramo> 
+        <tramo distancia="250" latitud="41.565159" longitud="2.257157" altitud="126" nsector="01"></tramo>
+        <tramo distancia="100" latitud="41.564625" longitud="2.256459" altitud="124" nsector="01"></tramo>
+        <tramo distancia="50" latitud="41.564747" longitud="2.256015" altitud="124" nsector="01"></tramo>
+        <tramo distancia="50" latitud="41.564899" longitud="2.255480" altitud="127" nsector="01"></tramo> 
+        <tramo distancia="50" latitud="41.564638" longitud="2.254808" altitud="127" nsector="01"></tramo> 
         <!-- 1 km-->
-        <tramo distancia="250" latitud="41.565119" longitud="2.252126" altitud="136" nsector="01"></tramo>
-        <tramo distancia="250" latitud="41.566802" longitud="2.252785" altitud="139" nsector="01"></tramo>
-        <tramo distancia="250" latitud="41.568319" longitud="2.254963" altitud="142" nsector="02"></tramo>
-        <tramo distancia="100" latitud="41.567315" longitud="2.255270" altitud="144" nsector="02"></tramo>
-        <tramo distancia="150" latitud="41.566446" longitud="2.254595" altitud="142" nsector="02"></tramo>
+        <tramo distancia="100" latitud="41.564315" longitud="2.254212" altitud="131" nsector="01"></tramo>
+        <tramo distancia="100" latitud="41.564205" longitud="2.253011" altitud="135" nsector="01"></tramo>
+        <tramo distancia="100" latitud="41.565228" longitud="2.252077" altitud="137" nsector="01"></tramo>
+        <tramo distancia="150" latitud="41.566601" longitud="2.252563" altitud="139" nsector="01"></tramo>
+        <tramo distancia="200" latitud="41.568117" longitud="2.253928" altitud="141" nsector="02"></tramo> <!-- 1'65 km-->
+        <tramo distancia="250" latitud="41.568230" longitud="2.255081" altitud="142" nsector="02"></tramo>
+        <tramo distancia="150" latitud="41.567315" longitud="2.255270" altitud="144" nsector="02"></tramo>
+        <tramo distancia="100" latitud="41.566446" longitud="2.254595" altitud="142" nsector="02"></tramo>
         <!-- 2 km-->
-        <tramo distancia="250" latitud="41.565833" longitud="2.256120" altitud="133" nsector="02"></tramo>
-        <tramo distancia="250" latitud="41.567377" longitud="2.257804" altitud="126" nsector="02"></tramo>
-        <tramo distancia="250" latitud="41.568813" longitud="2.256567" altitud="138" nsector="02"></tramo>
-        <tramo distancia="250" latitud="41.570771" longitud="2.256893" altitud="146" nsector="02"></tramo>
+        <tramo distancia="50" latitud="41.565857" longitud="2.254111" altitud="141" nsector="02"></tramo>
+        <tramo distancia="70" latitud="41.565361" longitud="2.254157" altitud="138" nsector="02"></tramo>
+        <tramo distancia="70" latitud="41.565341" longitud="2.254662" altitud="136" nsector="02"></tramo>
+        <tramo distancia="60" latitud="41.565833" longitud="2.256120" altitud="133" nsector="02"></tramo>
+        <tramo distancia="100" latitud="41.566344" longitud="2.257008" altitud="129" nsector="02"></tramo>
+        <tramo distancia="150" latitud="41.567377" longitud="2.257804" altitud="126" nsector="02"></tramo>
+        <tramo distancia="20" latitud="41.567500" longitud="2.257775" altitud="127" nsector="02"></tramo>
+        <tramo distancia="10" latitud="41.567708" longitud="2.257560" altitud="127" nsector="02"></tramo>
+        <tramo distancia="70" latitud="41.568005" longitud="2.257002" altitud="129" nsector="02"></tramo>
+        <tramo distancia="150" latitud="41.568813" longitud="2.256567" altitud="138" nsector="02"></tramo>
+        <tramo distancia="50" latitud="41.569522" longitud="2.256101" altitud="140" nsector="02"></tramo>
+        <tramo distancia="50" latitud="41.570229" longitud="2.256031" altitud="143" nsector="02"></tramo>
+        <tramo distancia="50" latitud="41.570682" longitud="2.256573" altitud="145" nsector="02"></tramo>
+        <tramo distancia="100" latitud="41.570955" longitud="2.257335" altitud="146" nsector="02"></tramo>
         <!-- 3 km-->
         <tramo distancia="250" latitud="41.571946" longitud="2.259822" altitud="143" nsector="02"></tramo>
-        <tramo distancia="200" latitud="41.572968" longitud="2.261954" altitud="140" nsector="03"></tramo>
+        <tramo distancia="150" latitud="41.572722" longitud="2.261853" altitud="142" nsector="02"></tramo>
+        <tramo distancia="50" latitud="41.572968" longitud="2.261954" altitud="140" nsector="03"></tramo>
         <tramo distancia="50" latitud="41.573324" longitud="2.261530" altitud="141" nsector="03"></tramo>
-        <tramo distancia="250" latitud="41.573883" longitud="2.259323" altitud="149" nsector="03"></tramo>
-        <tramo distancia="250" latitud="41.574632" longitud="2.261613" altitud="145" nsector="03"></tramo>
+        <tramo distancia="70" latitud="41.573344" longitud="2.260801" altitud="143" nsector="03"></tramo>
+        <tramo distancia="80" latitud="41.572901" longitud="2.259778" altitud="146" nsector="03"></tramo>
+        <tramo distancia="80" latitud="41.573141" longitud="2.258941" altitud="148" nsector="03"></tramo>
+        <tramo distancia="20" latitud="41.573883" longitud="2.259323" altitud="149" nsector="03"></tramo>
+        <tramo distancia="50" latitud="41.573936" longitud="2.259381" altitud="150" nsector="03"></tramo>
+
+        <tramo distancia="100" latitud="41.574554" longitud="2.260341" altitud="149" nsector="03"></tramo>
+        <tramo distancia="50" latitud="41.574662" longitud="2.260625" altitud="147" nsector="03"></tramo>
+        <tramo distancia="50" latitud="41.574512" longitud="2.260957" altitud="145" nsector="03"></tramo>
         <!-- 4 km-->
-        <tramo distancia="250" latitud="41.573667" longitud="2.263470" altitud="134" nsector="03"></tramo>
-        <tramo distancia="250" latitud="41.571847" longitud="2.262729" altitud="130" nsector="03"></tramo>
+        <tramo distancia="50" latitud="41.573998" longitud="2.261939" altitud="141" nsector="03"></tramo>
+        <tramo distancia="50" latitud="41.574268" longitud="2.262346" altitud="140" nsector="03"></tramo>
+        <tramo distancia="150" latitud="41.573667" longitud="2.263470" altitud="134" nsector="03"></tramo>
+        <tramo distancia="50" latitud="41.573141" longitud="2.263657" altitud="134" nsector="03"></tramo>
+        <tramo distancia="50" latitud="41.572704" longitud="2.263517" altitud="130" nsector="03"></tramo>
+        <tramo distancia="190" latitud="41.570033" longitud="2.261251" altitud="130" nsector="03"></tramo>
     </tramos>
 </circuito>

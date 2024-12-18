@@ -13,19 +13,10 @@ class Pais {
         this.poblacion = poblacion;
     }
 
-    setNCircuito(nCircuito){
+    setExtraInfo(nCircuito, gobierno, coordMeta, religion){
         this.nCircuito = nCircuito;
-    }
-
-    setGobierno(gobierno){
         this.gobierno = gobierno;
-    }
-
-    setCoordMeta(coordMeta){
         this.coordMeta = coordMeta;
-    }
-
-    setReligion(religion){
         this.religion = religion;
     }
 
@@ -118,5 +109,4 @@ class Pais {
 }
 
 var pais = new Pais("España", "Madrid", "48.797.875", );
-pais.setCoordMeta("41.570025 2.261211");
-pais.setNCircuito("Barcelona-Catalunya");
+pais.setExtraInfo("Barcelona-Catalunya", "Monarquía constitucional", "41.570025 2.261211", "Catolicismo");
