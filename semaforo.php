@@ -87,6 +87,7 @@
         <nav>
             <a href="memoria.html" accesskey="e" tabindex="1">Memoria</a>
             <a href="semaforo.php" accesskey="s" tabindex="2">Semáforo</a>
+            <a href="php/recetario.php" accesskey="s" tabindex="2">Recetario</a>
         </nav>
         
         <script>var semaforo = new Semaforo();</script>

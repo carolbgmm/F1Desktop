@@ -101,7 +101,6 @@
     <h2>Viajes</h2>
     <main>
         <input type="button" value="Obtener mapa estático" onClick = "viajes.getMapaEstaticoGoogle('ubicacion');"/>
-        <article id="ubicacion"></article>
     </main>
     <?php
             $carrusel = new Carrusel("F1", "Barcelona-Catalunya");

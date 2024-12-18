@@ -31,18 +31,18 @@ def createSvgPerfil(archivoXML, output):
                   '<svg xmlns="http://www.w3.org/2000/svg" version="2.0">\n')
     svgFile.write('<polyline points = "\n')
 
-    base = 300
-    init = 60
-    separacion = 20
+    base = 150
+    init = 0
+    separacion = 10
 
     svgFile.write(str(init) + ', ' + str(base) + '\n')
 
     incr = 0
     for element in archivoXML:
         incr += 1
-        svgFile.write(str(separacion*incr+40) + ',' + str(base-float(element[1])) + '\n')
+        svgFile.write(str(separacion*incr) + ',' + str(base-float(element[1])) + '\n')
 
-    svgFile.write((str(separacion*incr+40)) + ', ' + str(base) + '\n')
+    svgFile.write((str(separacion*incr)) + ', ' + str(base) + '\n')
     svgFile.write(str(init-1.5) + ', ' + str(base) + '\n')
 
     svgFile.write('"\nstyle="fill:white;stroke:orange;stroke-width:4" />\n')

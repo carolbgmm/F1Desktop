@@ -12,8 +12,8 @@
     <link rel="stylesheet" type="text/css" href="estilo/estilo.css" />
     <link rel="stylesheet" type="text/css" href="estilo/layout.css" />
     <link rel="icon" href="multimedia/imagenes/favicon.ico"/>
-    <link rel="stylesheet" type="text/css" href="estilo/viajes.css" />
-    <script src="js/viajes.js"></script>
+    <link rel="stylesheet" type="text/css" href="estilo/circuito.css" />
+    <script src="js/circuito.js"></script>
 </head>
 
 <body>
@@ -34,9 +34,10 @@
     <p>Estás en: <a href="index.html" title="inicio">Inicio</a> >> Circuito</p>
     <h2>Circuito</h2>
     <main>
-        <p><input type="file" id="archivoTexto" onchange="viajes.setFile(this.files)"</p>
-        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD3k7yZNPOEKeeFsGYF0329YKwyMWL6MsY&callback=viajes.initMap"></script>
-        <div></div>
+        <p><input type="file" id="archivoTexto" value="Subir archivo kml" onchange="circuito.setKmlFile(this.files)"></p>
+        <p><input type="file" id="archivoTexto" value="Subir archivo svg" onchange="circuito.setSvgFile(this.files)"></p>
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD3k7yZNPOEKeeFsGYF0329YKwyMWL6MsY&callback=circuito.initMap"></script>
+       
         
     </main>
 </body>

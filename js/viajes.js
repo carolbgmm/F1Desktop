@@ -3,11 +3,11 @@
 class Viajes{
 
     kmlFile;
-    dinamicMap;
+    staticMap;
 
     constructor(){
         navigator.geolocation.getCurrentPosition(this.getPosicion.bind(this),  this.verErrores.bind(this));
-        this.dinamicMap = false;
+        this.staticMap = false;
     }
 
     getPosicion(posicion){
@@ -61,118 +61,67 @@ class Viajes{
         ubicacion.innerHTML = datos;
     }
 
-    getMapaEstaticoGoogle(dondeVerlo){
-        var ubicacion=document.getElementById(dondeVerlo);
+    getMapaEstaticoGoogle(){
+        if(!this.staticMap){
+            var ubicacion=document.createElement("article");
         
-        var apiKey = "&key=AIzaSyD3k7yZNPOEKeeFsGYF0329YKwyMWL6MsY";
-        //URL: obligatoriamente https
-        var url = "https://maps.googleapis.com/maps/api/staticmap?";
-        //Parámetros
-        // centro del mapa (obligatorio si no hay marcadores)
-        var centro = "center=" + this.latitud + "," + this.longitud;
-        //zoom (obligatorio si no hay marcadores)
-        //zoom: 1 (el mundo), 5 (continentes), 10 (ciudad), 15 (calles), 20 (edificios)
-        var zoom ="&zoom=15";
-        //Tamaño del mapa en pixeles (obligatorio)
-        var tamaño= "&size=800x600";
-        //Escala (opcional)
-        //Formato (opcional): PNG,JPEG,GIF
-        //Tipo de mapa (opcional)
-        //Idioma (opcional)
-        //region (opcional)
-        //marcadores (opcional)
-        var marcador = "&markers=color:red%7Clabel:S%7C" + this.latitud + "," + this.longitud;
-        //rutas. path (opcional)
-        //visible (optional)
-        //style (opcional)
-        var sensor = "&sensor=false"; 
-        
-        this.imagenMapa = url + centro + zoom + tamaño + marcador + sensor + apiKey;
-        ubicacion.innerHTML = "<img src='"+this.imagenMapa+"' alt='mapa estático google' />";
+            var apiKey = "&key=AIzaSyD3k7yZNPOEKeeFsGYF0329YKwyMWL6MsY";
+            //URL: obligatoriamente https
+            var url = "https://maps.googleapis.com/maps/api/staticmap?";
+            //Parámetros
+            // centro del mapa (obligatorio si no hay marcadores)
+            var centro = "center=" + this.latitud + "," + this.longitud;
+            //zoom (obligatorio si no hay marcadores)
+            //zoom: 1 (el mundo), 5 (continentes), 10 (ciudad), 15 (calles), 20 (edificios)
+            var zoom ="&zoom=15";
+            //Tamaño del mapa en pixeles (obligatorio)
+            var tamaño= "&size=800x600";
+            //Escala (opcional)
+            //Formato (opcional): PNG,JPEG,GIF
+            //Tipo de mapa (opcional)
+            //Idioma (opcional)
+            //region (opcional)
+            //marcadores (opcional)
+            var marcador = "&markers=color:red%7Clabel:S%7C" + this.latitud + "," + this.longitud;
+            //rutas. path (opcional)
+            //visible (optional)
+            //style (opcional)
+            var sensor = "&sensor=false"; 
+            
+            this.imagenMapa = url + centro + zoom + tamaño + marcador + sensor + apiKey;
+            ubicacion.innerHTML = "<img src='"+this.imagenMapa+"' alt='mapa estático google' />";
+            var main = document.querySelector("main");
+            main.append(map);
+            this.staticMap = true;
+        }
     }
 
     
 
     async initMap(){  
-        if(!this.dinamicMap){
-            await google.maps.importLibrary("maps");
-            var centro = {lat: 43.3672702, lng: -5.8502461};
-            var map = document.createElement("article");
-            let mapaGeoposicionado = new google.maps.Map(map,{
-                zoom: 10,
-                center:centro,
-                mapTypeId: google.maps.MapTypeId.ROADMAP
-            });
-            
-            let infoWindow = new google.maps.InfoWindow;
+        await google.maps.importLibrary("maps");
+        var centro = {lat: 43.3672702, lng: -5.8502461};
+        // he encontrado dificultades usando el bloque anónimo div con el mapa dinámico
+        // ya que no me dejaba moverme en el mapa. Sin embargo, usando article funciona perfectamente
+        var map = document.createElement("article");
+        let mapaGeoposicionado = new google.maps.Map(map,{
+            zoom: 10,
+            center:centro,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        });
         
-            infoWindow.setPosition(centro);
-            infoWindow.setContent('Localización encontrada');
-            infoWindow.open(mapaGeoposicionado);
-            mapaGeoposicionado.setCenter(centro);
+        let infoWindow = new google.maps.InfoWindow;
     
-            var main = document.querySelector("main");
-            main.prepend(map);
-            this.dinamicMap = true;
-        }
-        
+        infoWindow.setPosition(centro);
+        infoWindow.setContent('Localización encontrada');
+        infoWindow.open(mapaGeoposicionado);
+        mapaGeoposicionado.setCenter(centro);
+
+        var main = document.querySelector("main");
+        main.prepend(map);
     }
 
-    async setFile(files){
-        this.kmlFile = files[0];
-        var script = document.createElement("script");
-        document.getElementsByTagName("main")[0].append(script);
-        var lector = new FileReader();
-
-        console.log("before load");
-        lector.onload = function (event) {
-            console.log("hey");
-            var kmlText = event.target.result;  // El contenido del archivo KML como texto
-
-            // Convierte el texto KML a un documento XML
-            var parser = new DOMParser();
-            var kmlDoc = parser.parseFromString(kmlText, 'text/xml');
-
-            // Obtiene todos los elementos Placemark del documento KML
-            var placemarks = kmlDoc.getElementsByTagName('Placemark');
-            var pathlinecoords = []
-            for (var i = 0; i < placemarks.length; i++) {
-                console.log(placemarks);
-                var placemark = placemarks[i];
-                console.log(placemark);
-                // Obtiene las coordenadas del Placemark
-                var coordinates = placemark.getElementsByTagName('coordinates')[0].textContent.split(',');
-
-                if (self.kmlMap == undefined) {
-                    var mapArt = document.getElementsByTagName("div")[0];
-                    self.kmlMap = new google.maps.Map(mapArt, {
-                        zoom: 14,
-                        center: { lat: parseFloat(coordinates[1]), lng: parseFloat(coordinates[0]) }
-                    });
-                }
-
-                // Crea un marcador en el mapa para cada Placemark
-                new google.maps.Marker({
-                    position: { lat: parseFloat(coordinates[1]), lng: parseFloat(coordinates[0]) },
-                    title: "",
-                    map: self.kmlMap
-                });
-
-                pathlinecoords.push(new google.maps.LatLng(parseFloat(coordinates[1]), parseFloat(coordinates[0])));
-
-            }
-            var pathLine = new google.maps.Polyline({
-                path: pathlinecoords,
-                strokeColor: "#FF0000",
-                strokeOpacity: 1.0,
-                strokeWeight: 2
-            });
-            pathLine.setMap(self.kmlMap)
-        };
-        console.log("post load");
-        lector.readAsText(this.kmlFile);
-        
-    }
+    
     
     handleLocationError(browserHasGeolocation, infoWindow, pos) {
         infoWindow.setPosition(pos);
