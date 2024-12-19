@@ -26,7 +26,7 @@ class Agenda {
                     html += "</ul>";                    
                 })
                 html +="</ul>";
-                $("section").append(html);
+                $("article").append(html);
             },error: function (err) {
                 console.log(err)                
             }
