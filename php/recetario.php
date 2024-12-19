@@ -249,7 +249,7 @@
     <main>
         <h4>Añadir receta</h4>
         <form method="post" action="recetario.php">
-            <label for="ingredientes">Ingrediente:</label>
+            <label for="ingrediente">Ingrediente:</label>
             <input type="text" name="ingrediente" id="ingrediente" required>
             <label for="cantidad">Cantidad:</label>
             <input type="number" name="cantidad" id="cantidad" required>
@@ -274,18 +274,14 @@
             ?>
         </form>
         <form method="post" action="recetario.php">
-            <section>
-                <label>Nombre: </label>
-                <input type="text" name="nombre"/>
-            </section>
-            <section>
-                <label>Categoría: </label>
-                <select name="categoria" size="4">
-                    <?php
-                        $receta->getCategorias();
-                    ?>
-                </select>
-            </section>
+            <label>Nombre: </label>
+            <input type="text" name="nombre"/>
+            <label>Categoría: </label>
+            <select name="categoria" size="4">
+                <?php
+                    $receta->getCategorias();
+                ?>
+            </select>
             <input type="submit" name="terminar" value="Añadir receta">
             <?php
                 if(count($_POST)>0 && isset($_POST['terminar'])){
