@@ -74,7 +74,7 @@ class Pais {
                             humidity = humidity/(i- lastDateI);
                             html += "<article>";
                             html += "<h4>" + lastDate + "</h4>";
-                            html += "<img src='https://openweathermap.org/img/wn/" + $('symbol:eq(' + parseInt(i-(i- lastDateI)/2) + ')', datos).attr("var")  +"@2x.png'/>";
+                            html += "<img src='https://openweathermap.org/img/wn/" + $('symbol:eq(' + parseInt(i-(i- lastDateI)/2) + ')', datos).attr("var")  +"@2x.png' alt='"+$('symbol:eq(' + parseInt(forecast.length-(forecast.length- lastDateI)/2) + ')', datos).attr("name")+"'/>";
                             html += "<p>Máxima: " + maxTemp +"ºC</p>";
                             html += "<p>Mínima: " + minTemp +"ºC</p>";
                             html += "</article>";
