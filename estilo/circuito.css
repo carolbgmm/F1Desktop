@@ -9,3 +9,10 @@ main article {
 main svg{
     width:100%; 
 }
+
+/* Especificidad 001 */
+label{
+    display: block;
+    margin-top: 0.25em;
+    margin-bottom: 0.25em;
+  }

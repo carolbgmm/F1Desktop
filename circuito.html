@@ -34,8 +34,8 @@
     <p>Estás en: <a href="index.html" title="inicio">Inicio</a> >> Circuito</p>
     <h2>Circuito</h2>
     <main>
-        <p><input type="file" id="archivoTexto" value="Subir archivo kml" onchange="circuito.setKmlFile(this.files)"></p>
-        <p><input type="file" id="archivoTexto" value="Subir archivo svg" onchange="circuito.setSvgFile(this.files)"></p>
+        <label>Subir archivo KML:<input type="file" onchange="circuito.setKmlFile(this.files)"></label>
+        <label>Subir archivo SVG: <input type="file" onchange="circuito.setSvgFile(this.files)"></label>
         <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD3k7yZNPOEKeeFsGYF0329YKwyMWL6MsY&callback=circuito.initMap"></script>
     </main>
 </body>
