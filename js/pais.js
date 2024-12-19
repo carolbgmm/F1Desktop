@@ -93,7 +93,7 @@ class Pais {
                 html += "<p>Máxima: " + maxTemp +"ºC</p>";
                 html += "<p>Mínima: " + minTemp +"ºC</p>";
                 html += "</article>";
-                $("main").append(html);
+                $("section").append(html);
                 
             },
             error: function (err) {
