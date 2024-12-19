@@ -36,49 +36,54 @@ class Circuito{
         var lector = new FileReader();
 
         lector.onload = function (event) {
-            var kmlText = event.target.result;  // El contenido del archivo KML como texto
+            if (files[0].name.slice(-3) == "kml") {
+                var kmlText = event.target.result;  // El contenido del archivo KML como texto
 
-            // Convierte el texto KML a un documento XML
-            var parser = new DOMParser();
-            var kmlDoc = parser.parseFromString(kmlText, 'text/xml');
+                // Convierte el texto KML a un documento XML
+                var parser = new DOMParser();
+                var kmlDoc = parser.parseFromString(kmlText, 'text/xml');
 
-            // Obtiene todos los elementos Placemark del documento KML
-            var placemarks = kmlDoc.getElementsByTagName('Placemark');
-            var pathlinecoords = []
-            for (var i = 0; i < placemarks.length; i++) {
-                console.log(placemarks);
-                var placemark = placemarks[i];
-                console.log(placemark);
-                // Obtiene las coordenadas del Placemark
-                var coordinates = placemark.getElementsByTagName('coordinates')[0].textContent.split(',');
+                // Obtiene todos los elementos Placemark del documento KML
+                var placemarks = kmlDoc.getElementsByTagName('Placemark');
+                var pathlinecoords = []
+                for (var i = 0; i < placemarks.length; i++) {
+                    console.log(placemarks);
+                    var placemark = placemarks[i];
+                    console.log(placemark);
+                    // Obtiene las coordenadas del Placemark
+                    var coordinates = placemark.getElementsByTagName('coordinates')[0].textContent.split(',');
 
-                if (self.kmlMap == undefined) {
-                    var mapArt = document.getElementsByTagName("div")[0];
-                    self.kmlMap = new google.maps.Map(mapArt, {
-                        zoom: 14,
-                        center: { lat: parseFloat(coordinates[1]), lng: parseFloat(coordinates[0]) }
+                    if (self.kmlMap == undefined) {
+                        var mapArt = document.getElementsByTagName("div")[0];
+                        self.kmlMap = new google.maps.Map(mapArt, {
+                            zoom: 14,
+                            center: { lat: parseFloat(coordinates[1]), lng: parseFloat(coordinates[0]) }
+                        });
+                    }
+
+                    // Crea un marcador en el mapa para cada Placemark
+                    new google.maps.Marker({
+                        position: { lat: parseFloat(coordinates[1]), lng: parseFloat(coordinates[0]) },
+                        title: "",
+                        map: self.kmlMap
                     });
+
+                    pathlinecoords.push(new google.maps.LatLng(parseFloat(coordinates[1]), parseFloat(coordinates[0])));
+
                 }
-
-                // Crea un marcador en el mapa para cada Placemark
-                new google.maps.Marker({
-                    position: { lat: parseFloat(coordinates[1]), lng: parseFloat(coordinates[0]) },
-                    title: "",
-                    map: self.kmlMap
+                var pathLine = new google.maps.Polyline({
+                    path: pathlinecoords,
+                    strokeColor: "#FF0000",
+                    strokeOpacity: 1.0,
+                    strokeWeight: 2
                 });
-
-                pathlinecoords.push(new google.maps.LatLng(parseFloat(coordinates[1]), parseFloat(coordinates[0])));
-
+                pathLine.setMap(self.kmlMap)
+            }else {
+                window.alert("Error : ¡¡¡El archivo" + file.name + "no es kml!!!");
             }
-            var pathLine = new google.maps.Polyline({
-                path: pathlinecoords,
-                strokeColor: "#FF0000",
-                strokeOpacity: 1.0,
-                strokeWeight: 2
-            });
-            pathLine.setMap(self.kmlMap)
         };
         lector.readAsText(this.kmlFile);
+        
         
     }
 

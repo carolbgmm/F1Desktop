@@ -243,7 +243,7 @@
     <nav>
         <a href="../memoria.html" accesskey="e" tabindex="1">Memoria</a>
         <a href="../semaforo.php" accesskey="s" tabindex="2">Semáforo</a>
-        <a href="../api.php" accesskey="a" tabindex="2">API</a>
+        <a href="../api.html" accesskey="a" tabindex="2">API</a>
         <a href="recetario.php" accesskey="s" tabindex="2">Recetario</a>
     </nav>
     <main>

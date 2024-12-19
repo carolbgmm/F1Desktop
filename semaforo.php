@@ -62,7 +62,7 @@
     <meta name="author" content="Carolina Barrios Gonzalez"/>
     <link rel="stylesheet" type="text/css" href="estilo/estilo.css" />
     <link rel="stylesheet" type="text/css" href="estilo/layout.css" />
-    <link rel="stylesheet" type="text/css" href="estilo/semaforo.css" />
+    <link rel="stylesheet" type="text/css" href="estilo/semaforo_grid.css" />
     <link rel="icon" href="multimedia/imagenes/favicon.ico"/>
     <script src="js/semaforo.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -87,7 +87,7 @@
         <nav>
             <a href="memoria.html" accesskey="e" tabindex="1">Memoria</a>
             <a href="semaforo.php" accesskey="s" tabindex="2">Semáforo</a>
-            <a href="api.php" accesskey="a" tabindex="2">API</a>
+            <a href="api.html" accesskey="a" tabindex="2">API</a>
             <a href="php/recetario.php" accesskey="s" tabindex="2">Recetario</a>
         </nav>
         

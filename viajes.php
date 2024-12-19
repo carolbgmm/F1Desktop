@@ -100,7 +100,7 @@
     <p>Estás en: <a href="index.html" title="inicio">Inicio</a> >> Viajes</p>
     <h2>Viajes</h2>
     <main>
-        <input type="button" value="Obtener mapa estático" onClick = "viajes.getMapaEstaticoGoogle('ubicacion');"/>
+        <input type="button" value="Obtener mapa estático" onClick = "viajes.getMapaEstaticoGoogle();"/>
     </main>
     <?php
             $carrusel = new Carrusel("F1", "Barcelona-Catalunya");

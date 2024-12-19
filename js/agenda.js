@@ -23,8 +23,7 @@ class Agenda {
                     html += "<li>" + item.Circuit.circuitName +"</li>";
                     html += "<li>" + item.Circuit.Location.lat + ", " + item.Circuit.Location.long +"</li>";
                     html += "<li>" + item.Qualifying.date + " a las " + item.Qualifying.time +"</li>";
-                    html += "</ul>";
-                    console.log(i);                    
+                    html += "</ul>";                    
                 })
                 html +="</ul>";
                 $("section").append(html);

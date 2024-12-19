@@ -91,7 +91,7 @@ class Viajes{
             this.imagenMapa = url + centro + zoom + tamaño + marcador + sensor + apiKey;
             ubicacion.innerHTML = "<img src='"+this.imagenMapa+"' alt='mapa estático google' />";
             var main = document.querySelector("main");
-            main.append(map);
+            main.append(ubicacion);
             this.staticMap = true;
         }
     }
